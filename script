@@ -1,0 +1,20 @@
+scripting::open --xsf /path/to/file.xsf
+
+scripting::displayMode3D Pipe&Ball
+
+
+scripting::scalarField3D::load
+
+#IsoControl_Hide .iso
+
+scripting::scalarField3D::configure \
+    -isosurface                1 \
+    -interpolation_degree      2 \
+    -isolevel                  +0.1 \
+#   -set transparency of isosurface
+
+
+
+scripting::scalarField3D::render
+
+scripting::printToFile /home/user/print.png
